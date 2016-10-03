@@ -1,0 +1,5 @@
+options:
+  port:
+    type: int
+    default: 8000
+    description: "TCP port to expose JupyterHub on."

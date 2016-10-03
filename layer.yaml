@@ -1,0 +1,7 @@
+includes: ['layer:basic', 'interface:jupyterhub-spawner']
+options:
+  basic:
+    packages:
+      - python3-pip
+      - npm
+      - nodejs-legacy

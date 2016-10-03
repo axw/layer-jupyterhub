@@ -1,0 +1,10 @@
+[Unit]
+Description=JupyterHub
+
+[Service]
+ExecStart=/usr/local/bin/jupyterhub -f /etc/jupyterhub/jupyterhub_config.py
+Restart=on-failure
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
