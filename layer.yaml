@@ -1,4 +1,7 @@
-includes: ['layer:basic', 'interface:jupyterhub-spawner']
+includes:
+  - 'layer:basic'
+  - 'interface:jupyterhub-spawner'
+  - 'interface:jupyterhub-authenticator'
 options:
   basic:
     packages:

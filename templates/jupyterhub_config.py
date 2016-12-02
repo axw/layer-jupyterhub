@@ -45,7 +45,7 @@
 #  - takes two arguments: (handler, data),
 #    where `handler` is the calling web.RequestHandler,
 #    and `data` is the POST form data from the login page.
-c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
+#c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 ## The base URL of the entire application
 #c.JupyterHub.base_url = '/'
@@ -136,9 +136,7 @@ c.JupyterHub.port = {{port}}
 #c.JupyterHub.proxy_api_port = 0
 
 ## The Proxy Auth token.
-#  
-#  Loaded from the CONFIGPROXY_AUTH_TOKEN env variable by default.
-#c.JupyterHub.proxy_auth_token = ''
+c.JupyterHub.proxy_auth_token = '{{proxy_auth_token}}'
 
 ## Interval (in seconds) at which to check if the proxy is running.
 #c.JupyterHub.proxy_check_interval = 30
@@ -386,8 +384,11 @@ c.JupyterHub.port = {{port}}
 #c.PAMAuthenticator.service = 'login'
 
 c.JupyterHub.spawner_class = '{{spawner_class}}'
-
 {% for key, value in spawner_config.items() %}
 {{"c.%s = %r"|format(key, value)}}
 {% endfor %}
 
+c.JupyterHub.authenticator_class = '{{authenticator_class}}'
+{% for key, value in authenticator_config.items() %}
+{{"c.%s = %r"|format(key, value)}}
+{% endfor %}

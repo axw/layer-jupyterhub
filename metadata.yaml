@@ -9,6 +9,10 @@ tags:
   - misc
 series: [xenial]
 provides:
+  authenticator:
+    interface: jupyterhub-authenticator
+    scope: container
+    limit: 1
   spawner:
     interface: jupyterhub-spawner
     scope: container
